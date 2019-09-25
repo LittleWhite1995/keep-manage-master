@@ -3,37 +3,32 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.8.RELEASE</version>
+		<groupId>com.keep.manage.master</groupId>
+		<artifactId>keep-manage-master</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.keep.manage.master</groupId>
-	<artifactId>keep-manage-master</artifactId>
+	<groupId>com.manage.backend</groupId>
+	<artifactId>app-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>keep-manage-master</name>
+	<name>app-backend</name>
 	<description>Demo project for Spring Boot</description>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
-		<snapshot.version>0.0.1-SNAPSHOT</snapshot.version>
-		<mybatis.version>1.3.2</mybatis.version>
-		<druid-version>1.1.10</druid-version>
-		<poi.version>3.9</poi.version>
-		<javax.servlet.version>3.1.0</javax.servlet.version>
-		<swagger2.version>2.9.2</swagger2.version>
-		<!--<jxls.version>1.0.6</jxls.version>-->
-		<!--<fileupload.version>1.3.1</fileupload.version>-->
-		<logstash.version>5.3</logstash.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<version>0.9.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
