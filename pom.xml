@@ -30,6 +30,18 @@
 		<logstash.version>5.3</logstash.version>
 	</properties>
 
+	<modules>
+		<module>config-server</module>
+		<module>app-backend</module>
+		<module>all-service</module>
+<!--		<module>keep-orm</module>-->
+<!--		<module>business-entity</module>-->
+<!--		<module>keep-util</module>-->
+<!--		<module>gateway-service</module>-->
+<!--		<module>snowflake-service</module>-->
+<!--		<module>auth-service</module>-->
+	</modules>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
