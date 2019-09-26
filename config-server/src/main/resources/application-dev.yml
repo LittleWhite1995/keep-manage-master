@@ -13,6 +13,7 @@ spring:
   application:
     name: config-server
 
+# 配置Actuator检查项
 management:
   endpoints:
     web:
