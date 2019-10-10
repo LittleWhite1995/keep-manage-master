@@ -8,40 +8,43 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.manage.snowflake</groupId>
-	<artifactId>snowflake-service</artifactId>
+	<groupId>com.manage.orm</groupId>
+	<artifactId>keep-orm</artifactId>
 	<version>${snapshot.version}</version>
-	<name>snowflake-service</name>
+	<name>keep-orm</name>
 	<description>Demo project for Spring Boot</description>
 
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
 	<dependencies>
+		<!-- mybatis 启动依赖 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-			<version>0.9.0.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.alibaba.nacos</groupId>
-			<artifactId>nacos-client</artifactId>
-			<version>1.1.0</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 
+		<!-- business-entity -->
 		<dependency>
-			<groupId>net.logstash.logback</groupId>
-			<artifactId>logstash-logback-encoder</artifactId>
-			<version>${logstash.version}</version>
+			<groupId>com.manage.entity</groupId>
+			<artifactId>business-entity</artifactId>
+			<version>${snapshot.version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>

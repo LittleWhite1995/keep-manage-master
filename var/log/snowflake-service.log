@@ -1,93 +1,22 @@
-2019-09-26 15:11:56.508  INFO 3448 --- [main] c.m.s.SnowflakeServiceApplication        : The following profiles are active: dev
-2019-09-26 15:11:57.904  INFO 3448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-09-26 15:11:57.917  INFO 3448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-09-26 15:11:58.004  INFO 3448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 repository interfaces.
-2019-09-26 15:11:58.908  INFO 3448 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=59b8b552-c102-3c62-98fa-b7e986ec4395
-2019-09-26 15:11:59.017  INFO 3448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ee18b1c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-09-26 15:11:59.883  INFO 3448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8751 (http)
-2019-09-26 15:11:59.965  INFO 3448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-09-26 15:11:59.972  INFO 3448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
-2019-09-26 15:12:00.369  INFO 3448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-09-26 15:12:00.370  INFO 3448 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3821 ms
-2019-09-26 15:12:01.499  WARN 3448 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-09-26 15:12:01.499  INFO 3448 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-09-26 15:12:01.511  WARN 3448 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-09-26 15:12:01.511  INFO 3448 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-09-26 15:12:01.884  INFO 3448 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 15:12:03.010  INFO 3448 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
-2019-09-26 15:12:04.415  INFO 3448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8751 (http) with context path ''
-2019-09-26 15:12:05.804 ERROR 3448 --- [ThreadPoolTaskScheduler-1] o.s.c.a.nacos.discovery.NacosWatch       : Error watching Nacos Service change
-
-java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/service/list after all servers([localhost:8848]) tried: failed to req API:localhost:8848/nacos/v1/ns/service/list. code:500 msg: java.net.ConnectException: Connection refused: connect
-	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:464) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:430) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:376) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.getServiceList(NamingProxy.java:358) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.getServiceList(NamingProxy.java:334) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:440) ~[nacos-client-1.1.0.jar:na]
-	at org.springframework.cloud.alibaba.nacos.discovery.NacosWatch.nacosServicesWatch(NacosWatch.java:127) ~[spring-cloud-alibaba-nacos-discovery-0.9.0.RELEASE.jar:0.9.0.RELEASE]
-	at org.springframework.cloud.alibaba.nacos.discovery.NacosWatch$$Lambda$498/2111669429.run(Unknown Source) [spring-cloud-alibaba-nacos-discovery-0.9.0.RELEASE.jar:0.9.0.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_20]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_20]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_20]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_20]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_20]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_20]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
-
-2019-09-26 15:12:05.889 ERROR 3448 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, snowflake-service register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='snowflake-service', weight=1.0, clusterName='DEFAULT', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='10.40.45.197', networkInterface='', port=8751, secure=false, accessKey='', secretKey=''}},
-
-java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8848]) tried: failed to req API:localhost:8848/nacos/v1/ns/instance. code:500 msg: java.net.ConnectException: Connection refused: connect
-	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:464) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:386) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:188) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:205) ~[nacos-client-1.1.0.jar:na]
-	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:184) ~[nacos-client-1.1.0.jar:na]
-	at org.springframework.cloud.alibaba.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:63) ~[spring-cloud-alibaba-nacos-discovery-0.9.0.RELEASE.jar:0.9.0.RELEASE]
-	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:239) [spring-cloud-commons-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.cloud.alibaba.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:74) [spring-cloud-alibaba-nacos-discovery-0.9.0.RELEASE.jar:0.9.0.RELEASE]
-	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:138) [spring-cloud-commons-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:101) [spring-cloud-commons-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:88) [spring-cloud-commons-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) [spring-cloud-commons-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:165) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
-	at com.manage.snowflake.SnowflakeServiceApplication.main(SnowflakeServiceApplication.java:12) [classes/:na]
-
-2019-09-26 15:12:05.900  INFO 3448 --- [main] c.m.s.SnowflakeServiceApplication        : Started SnowflakeServiceApplication in 13.93 seconds (JVM running for 15.338)
-2019-09-26 15:12:06.828  INFO 3448 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2019-09-26 15:12:07.033  INFO 3448 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2019-09-26 15:12:30.296  INFO 4048 --- [main] c.m.s.SnowflakeServiceApplication        : The following profiles are active: dev
-2019-09-26 15:12:31.387  INFO 4048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-09-26 15:12:31.394  INFO 4048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-09-26 15:12:31.467  INFO 4048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 0 repository interfaces.
-2019-09-26 15:12:32.169  INFO 4048 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=59b8b552-c102-3c62-98fa-b7e986ec4395
-2019-09-26 15:12:32.246  INFO 4048 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$429b4846] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-09-26 15:12:32.822  INFO 4048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8751 (http)
-2019-09-26 15:12:32.889  INFO 4048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-09-26 15:12:32.890  INFO 4048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
-2019-09-26 15:12:33.315  INFO 4048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-09-26 15:12:33.316  INFO 4048 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2990 ms
-2019-09-26 15:12:34.214  WARN 4048 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-09-26 15:12:34.214  INFO 4048 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-09-26 15:12:34.225  WARN 4048 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-09-26 15:12:34.225  INFO 4048 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-09-26 15:12:34.604  INFO 4048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 15:12:36.238  INFO 4048 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
-2019-09-26 15:12:36.848  INFO 4048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8751 (http) with context path ''
-2019-09-26 15:12:37.280  INFO 4048 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, snowflake-service 10.40.45.197:8751 register finished
-2019-09-26 15:12:37.284  INFO 4048 --- [main] c.m.s.SnowflakeServiceApplication        : Started SnowflakeServiceApplication in 11.376 seconds (JVM running for 13.497)
-2019-09-26 15:12:37.579  INFO 4048 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2019-09-26 15:12:37.585  INFO 4048 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-10-10 11:43:15.217  INFO 9660 --- [main] c.m.s.SnowflakeServiceApplication        : The following profiles are active: dev
+2019-10-10 11:43:16.092  INFO 9660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-10 11:43:16.097  INFO 9660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-10 11:43:16.140  INFO 9660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-10-10 11:43:16.601  INFO 9660 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=59b8b552-c102-3c62-98fa-b7e986ec4395
+2019-10-10 11:43:16.683  INFO 9660 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e73b59a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-10 11:43:17.310  INFO 9660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8751 (http)
+2019-10-10 11:43:17.369  INFO 9660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-10 11:43:17.370  INFO 9660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-10 11:43:17.653  INFO 9660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-10 11:43:17.654  INFO 9660 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2399 ms
+2019-10-10 11:43:18.673  WARN 9660 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-10 11:43:18.673  INFO 9660 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-10 11:43:18.684  WARN 9660 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-10 11:43:18.684  INFO 9660 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-10 11:43:19.132  INFO 9660 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-10 11:43:20.002  INFO 9660 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-10-10 11:43:20.604  INFO 9660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8751 (http) with context path ''
+2019-10-10 11:43:21.219  INFO 9660 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, snowflake-service 10.40.45.100:8751 register finished
+2019-10-10 11:43:21.222  INFO 9660 --- [main] c.m.s.SnowflakeServiceApplication        : Started SnowflakeServiceApplication in 9.557 seconds (JVM running for 10.689)
+2019-10-10 11:43:21.491  INFO 9660 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-10-10 11:43:21.498  INFO 9660 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
